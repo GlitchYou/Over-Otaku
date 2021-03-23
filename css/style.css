@@ -2,6 +2,10 @@
   --search-hegth: 50px;
 }
 
+* {
+  color: white;
+}
+
 body {
   background-color: #1d1d1d;
 }
@@ -16,7 +20,6 @@ div.search input {
   height: var(--search-hegth);
   background-color: #1b1b1b;
   font-size: 20px;
-  color: white;
   outline: none;
   border: none;
   float: left;
@@ -40,9 +43,31 @@ div.search input::-webkit-search-cancel-button {
 div.search img {
   height: var(--search-hegth);
   float: right;
-  width: 55px;
+  width: 50px;
 }
 
-div.search img:active {
-  background-color: #333333;
+nav div {
+  background-color: #222222;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
 }
+
+nav div img {
+  width: 100px;
+  height: 150px;
+  padding: 5px;
+  background-color: #1d1d1d;
+}
+
+nav div span {
+  float: right;
+  width: 74%;
+}
+
+.title, .year {
+  background-color: #1d1d1d;
+  padding: 5px;
+  border-radius: 5px;
+}
+
