@@ -6,10 +6,13 @@
 		<psort>ActiveAlpha</psort>
 		<scenes>OO - .Main</scenes>
 		<tids>172</tids>
+		<Img sr="icon" ve="2">
+			<uri>content://com.mixplorer.silver.file/521!/Tasker/projects/git/over-otaku/src/icon.png</uri>
+		</Img>
 	</Project>
 	<Scene sr="sceneOO - .Main">
 		<cdate>1616432462071</cdate>
-		<edate>1616512011124</edate>
+		<edate>1616512640510</edate>
 		<heightLand>-1</heightLand>
 		<heightPort>1857</heightPort>
 		<nme>OO - .Main</nme>
@@ -19,8 +22,8 @@
 			<flags>6</flags>
 			<geom>0,0,1080,1857,0,0,1080,1857</geom>
 			<Str sr="arg0" ve="3">WebView</Str>
-			<Int sr="arg1" val="1"/>
-			<Str sr="arg2" ve="3">Tasker/projects/git/over-otaku/index.html</Str>
+			<Int sr="arg1" val="2"/>
+			<Str sr="arg2" ve="3">%html</Str>
 			<Int sr="arg3" val="1"/>
 			<Int sr="arg4" val="1"/>
 			<Int sr="arg5" val="1"/>
@@ -52,11 +55,28 @@
 	</Scene>
 	<Task sr="task172">
 		<cdate>1616432324850</cdate>
-		<edate>1616510577327</edate>
+		<edate>1616781022509</edate>
 		<id>172</id>
 		<nme>OO - .Main</nme>
 		<pri>100</pri>
 		<Action sr="act0" ve="7">
+			<code>417</code>
+			<Str sr="arg0" ve="3">Tasker/projects/git/over-otaku/index.html</Str>
+			<Str sr="arg1" ve="3">%html</Str>
+			<Int sr="arg2" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>598</code>
+			<Str sr="arg0" ve="3">%html</Str>
+			<Str sr="arg1" ve="3">(?&lt;=src=")</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3">/sdcard/Tasker/projects/git/over-otaku/</Str>
+		</Action>
+		<Action sr="act2" ve="7">
 			<code>47</code>
 			<Str sr="arg0" ve="3">OO - .Main</Str>
 			<Int sr="arg1" val="10"/>
@@ -67,7 +87,7 @@
 			<Int sr="arg6" val="0"/>
 			<Int sr="arg7" val="0"/>
 		</Action>
-		<Action sr="act1" ve="7">
+		<Action sr="act3" ve="7">
 			<code>49</code>
 			<Str sr="arg0" ve="3">OO - .Main</Str>
 		</Action>
