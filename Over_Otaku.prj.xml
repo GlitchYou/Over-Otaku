@@ -1,18 +1,18 @@
-<TaskerData sr="" dvi="1" tv="5.12.6-beta">
+<TaskerData sr="" dvi="1" tv="5.12.21">
 	<dmetric>1080.0,1920.0</dmetric>
 	<Project sr="proj0" ve="2">
 		<cdate>1616432291453</cdate>
 		<name>Over Otaku</name>
 		<psort>ActiveAlpha</psort>
 		<scenes>OO - .Main</scenes>
-		<tids>172</tids>
+		<tids>172,282</tids>
 		<Img sr="icon" ve="2">
-			<uri>content://com.mixplorer.silver.file/521!/Tasker/projects/git/over-otaku/src/icon.png</uri>
+			<uri>content://com.mixplorer.silver.file/525!/Tasker/projects/git/over-otaku/src/icon.png</uri>
 		</Img>
 	</Project>
 	<Scene sr="sceneOO - .Main">
 		<cdate>1616432462071</cdate>
-		<edate>1616512640510</edate>
+		<edate>1620993879639</edate>
 		<heightLand>-1</heightLand>
 		<heightPort>1857</heightPort>
 		<nme>OO - .Main</nme>
@@ -21,9 +21,10 @@
 		<WebElement sr="elements0" ve="2">
 			<flags>6</flags>
 			<geom>0,0,1080,1857,0,0,1080,1857</geom>
+			<pageloadedTask>282</pageloadedTask>
 			<Str sr="arg0" ve="3">WebView</Str>
-			<Int sr="arg1" val="2"/>
-			<Str sr="arg2" ve="3">%html</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Tasker/projects/git/over-otaku/index.html</Str>
 			<Int sr="arg3" val="1"/>
 			<Int sr="arg4" val="1"/>
 			<Int sr="arg5" val="1"/>
@@ -55,28 +56,54 @@
 	</Scene>
 	<Task sr="task172">
 		<cdate>1616432324850</cdate>
-		<edate>1616781022509</edate>
+		<edate>1620993868164</edate>
 		<id>172</id>
 		<nme>OO - .Main</nme>
 		<pri>100</pri>
 		<Action sr="act0" ve="7">
 			<code>417</code>
+			<on>false</on>
 			<Str sr="arg0" ve="3">Tasker/projects/git/over-otaku/index.html</Str>
 			<Str sr="arg1" ve="3">%html</Str>
 			<Int sr="arg2" val="1"/>
 		</Action>
 		<Action sr="act1" ve="7">
 			<code>598</code>
+			<on>false</on>
 			<Str sr="arg0" ve="3">%html</Str>
-			<Str sr="arg1" ve="3">(?&lt;=src=")</Str>
+			<Str sr="arg1" ve="3">js/</Str>
 			<Int sr="arg2" val="0"/>
 			<Int sr="arg3" val="0"/>
 			<Int sr="arg4" val="0"/>
 			<Str sr="arg5" ve="3"/>
 			<Int sr="arg6" val="1"/>
-			<Str sr="arg7" ve="3">/sdcard/Tasker/projects/git/over-otaku/</Str>
+			<Str sr="arg7" ve="3">%local/js/</Str>
 		</Action>
 		<Action sr="act2" ve="7">
+			<code>598</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%html</Str>
+			<Str sr="arg1" ve="3">css/</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3">%local/css/</Str>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>598</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%html</Str>
+			<Str sr="arg1" ve="3">src/</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3">%local/src/</Str>
+		</Action>
+		<Action sr="act4" ve="7">
 			<code>47</code>
 			<Str sr="arg0" ve="3">OO - .Main</Str>
 			<Int sr="arg1" val="10"/>
@@ -87,9 +114,59 @@
 			<Int sr="arg6" val="0"/>
 			<Int sr="arg7" val="0"/>
 		</Action>
-		<Action sr="act3" ve="7">
+		<Action sr="act5" ve="7">
 			<code>49</code>
 			<Str sr="arg0" ve="3">OO - .Main</Str>
+		</Action>
+		<ProfileVariable sr="pv0">
+			<clearout>true</clearout>
+			<exportval></exportval>
+			<immutable>true</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn></pvdn>
+			<pvid>172</pvid>
+			<pvit>t</pvit>
+			<pvn>%local</pvn>
+			<pvt>t</pvt>
+			<pvv>/sdcard/Tasker/projects/git/over-otaku</pvv>
+			<strout>false</strout>
+		</ProfileVariable>
+	</Task>
+	<Task sr="task282">
+		<cdate>1619308994744</cdate>
+		<edate>1619308994744</edate>
+		<id>282</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%script</Str>
+			<Str sr="arg1" ve="3">hsrc = document.querySelectorAll("*[src], *[href]");
+local = '/sdcard/Tasker/projects/git/over-otaku';
+ 
+for (hs of hsrc) {
+    if (hs.src !== undefined) {
+        if(hs.src.match(/^file:/)) {
+            hs.src = local + "/" + hs.src.replace("file:///", "");
+        }
+    } else {
+        if (hs.href.match(/^file:/)) {
+            hs.href = local + "/" + hs.href.replace("file:///", "");
+        }
+    }
+}</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>53</code>
+			<Str sr="arg0" ve="3">%scene_name</Str>
+			<Str sr="arg1" ve="3">%element_name</Str>
+			<Int sr="arg2" val="6"/>
+			<Str sr="arg3" ve="3">javascript:(function(){%script})()</Str>
 		</Action>
 	</Task>
 </TaskerData>
