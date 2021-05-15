@@ -41,5 +41,5 @@ function createItem(src, title, year, view = false, favorite = false, download =
   return item;
 }
 
-item = createItem('https://www.imgvault.xyz/images/animes/3107.jpg', 'Textlrfirjodisjgodirjgodirjgodirjgodirjgodirjgodrijgdorijgodirjg', '2017');
+item = createItem('https://www.imgvault.xyz/images/animes/3107.jpg', 'Haikyuu!!: Sainou to Sense', '2017');
 items.appendChild(item);
