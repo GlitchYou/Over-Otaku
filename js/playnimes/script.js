@@ -1,5 +1,4 @@
 const items = document.querySelector('.items');
-let item;
 
 function create(tagName, atributes = {}) {
   const tag = document.createElement(tagName);
@@ -20,10 +19,13 @@ function appendChilds(element, ...elements) {
   elements.forEach((e) => element.appendChild(e));
 }
 
-function createItem(src, title, year, view = false, favorite = false, download = false) {
+function createItem(id, title, year, view = false, favorite = false, download = false) {
+  const src = `https://www.imgvault.xyz/images/animes/${id}.jpg`;
   const short = title.replace(/^(\S+).*/, '$1').toLowerCase();
-  const item = create('div', { class: 'item' });
+  const item = create('div', { class: 'item', id });
   const img = create('img', { src, alt: short, class: 'tumb' });
+  title = title.replace(/\[.+?\]$/g, '');
+  title = title.replace(/\s+/, '');
 
   const info = create('div', { class: 'info' });
   const spanTitle = create('span');
@@ -41,5 +43,17 @@ function createItem(src, title, year, view = false, favorite = false, download =
   return item;
 }
 
-item = createItem('https://www.imgvault.xyz/images/animes/3107.jpg', 'Haikyuu!!: Sainou to Sense', '2017');
-items.appendChild(item);
+function addList() {
+  function callback(data) {
+    console.log(Object.keys(data))
+    data['dataR'].forEach(({id, title, year}) => {
+      console.log(title);
+      const item = createItem(id, title, year);
+      items.appendChild(item);
+    })
+  }
+  api('/api/inicial', callback);
+}
+
+addList();
+
